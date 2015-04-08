@@ -29,7 +29,7 @@ while (proceed === true);
 console.log(victim);
 console.log("Number of victims: " + numVictims);
 
-//create an Array that contains the victim Names
+// create an Array that contains the victim Names
 var victimNameList = [];
 for (i = 0; i < numVictims; i++) {
 	victimNameList.push(victim[i]["name"]);
@@ -41,10 +41,7 @@ for (i = 0; i < numVictims; i++) {
 console.log(victimNameList);
 
 
-
-
-
-//  Create an array that contains objects containing volunteer names
+//  Create an array that contains objects containing volunteer Information
 
 var numVolunteers = prompt("How many volunteers will be entered?");
 var volunteer = [];
@@ -78,13 +75,25 @@ alert("Number of victims: " + numVictims
 
 // Bonus 2 Street match
 
-// prompt("Enter the name of a victim to match with a volunteer.")
 
-// ??????????????????????????????????????????????????????????????
-	// if (victimInfo.hasOwnProperty(Jon) === true) {
-	// 	break;
-	// }	
-//???????????????????????????????????????????????????????????????????kkl;llkkljljk
+var chosenVictim = prompt("Who is your chosen victim?");
 
+for (i = 0; i <= numVictims; i++) {
+	if (i === numVictims) {
+		alert("There is no victim by that name.");
+	} else if (victim[i].name === chosenVictim) {
+		var street = victim[i].street;
+		
+		break;
+	}
+}
 
+var streetMatchName = [];
+for (i=0; i < numVolunteers; i++) {
+	if(volunteer[i].street === street) {
+		streetMatchName.push(name);
+	}
+}
+
+console.log("Names of volunteers with the same street: " + streetMatchName);
 
